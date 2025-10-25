@@ -199,14 +199,7 @@ namespace Google.XR.ARCoreExtensions
                 return;
             }
 
-            var subsystem = Session.subsystem;
-            _arCoreSubsystem = subsystem as ARCoreSessionSubsystem;
-            if (_arCoreSubsystem == null)
-            {
-                Debug.LogError("ARCoreExtensions: Incompatible ARCore subsystem. Check package versions.");
-                enabled = false;
-                return;
-            }
+            _arCoreSubsystem = (ARCoreSessionSubsystem)Session.subsystem;
             if (_arCoreSubsystem == null)
             {
                 Debug.LogError(
